@@ -1,0 +1,41 @@
+﻿@model ML.Usuario
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Usuarios</h2>
+<div class="container">
+    <div class="blockquote-reverse row" style="padding-bottom:10px">
+        <a href="@Url.Action("Form","Usuario")" class="btn btn-primary">Agregar Nuevo Usuario</a>
+    </div>
+    <table class="table table-hover row">
+        <tr>
+            <th hidden>IdUsuario</th>
+            <th >Editar</th>
+            <th >NombreUsaurio</th>
+            <th >Nombre</th>
+            <th >ApellidoPaterno</th>
+            <th >ApellidoMaterno</th>
+            <th >Edad</th>
+            <th >Sexo</th>
+            <th >Email</th>             
+            <th >Eliminar</th>             
+        </tr>
+        @foreach(ML.Usuario usuario in Model.Usuarios)
+        {
+    <tr>
+        <td>@Html.ActionLink("Editar","Form","Usuario",new { IdUsuario = usuario.IdUsuario})</td>
+        <td>@usuario.NombreUsuario</td>
+        <td>@usuario.Nombre</td>
+        <td>@usuario.ApellidoPaterno</td>
+        <td>@usuario.ApellidoMaterno</td>
+        <td>@usuario.Edad</td>
+        <td>@usuario.Sexo</td>
+        <td>@usuario.Email</td>
+        <td>@Html.ActionLink("Eliminar","Delete","Usuario",new { IdUsuario = usuario.IdUsuario})</td>
+    </tr>
+        }
+    </table>
+</div>
+

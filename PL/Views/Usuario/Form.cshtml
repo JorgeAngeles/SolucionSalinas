@@ -1,0 +1,61 @@
+﻿@model ML.Usuario
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<h2>Usuario</h2>
+<div class="container">
+    <div class="form-group">
+        @using (Html.BeginForm("Form", "Usuario", FormMethod.Post, htmlAttributes: new { @enctype = "multipart/form-data" }))
+        {
+            <div class="row form-group-lg" hidden>
+                @Html.LabelFor(m => Model.IdUsuario)
+                @Html.TextBoxFor(m => Model.IdUsuario, htmlAttributes: new { @class = "form-control" })
+
+            </div>
+            <div class="row form-group-lg">
+                @Html.LabelFor(m => Model.NombreUsuario)
+                @Html.TextBoxFor(m => Model.NombreUsuario, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.NombreUsuario)
+            </div>
+            <div class="row form-group-lg">
+                @Html.LabelFor(m => Model.Nombre)
+                @Html.TextBoxFor(m => Model.Nombre, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.Nombre)
+            </div>
+            <div class="row form-group-lg">
+                @Html.LabelFor(m => Model.ApellidoPaterno)
+                @Html.TextBoxFor(m => Model.ApellidoPaterno, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.ApellidoPaterno)
+            </div>
+            <div class="row form-group-lg">
+                @Html.LabelFor(m => Model.ApellidoMaterno)
+                @Html.TextBoxFor(m => Model.ApellidoMaterno, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.ApellidoMaterno)
+            </div>
+            <div class="row form-group-lg">
+                @Html.LabelFor(m => Model.Edad)
+                @Html.TextBoxFor(m => Model.Edad, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.Edad)
+            </div>
+            <div class="row form-group-lg">
+                @Html.LabelFor(m => Model.Sexo)
+                @Html.TextBoxFor(m => Model.Sexo, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.Sexo)
+            </div>
+            <div class="row form-group-lg">
+                @Html.LabelFor(m => Model.Email)
+                @Html.TextBoxFor(m => Model.Email, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.Email)
+            </div>
+            <div class="row form-group-lg">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        }
+    </div>
+</div>
+
+
