@@ -12,6 +12,7 @@ namespace BL
 {
     public class Usuario
     {
+        //Método para agregar nuevo usuario
         public static ML.Result Add(ML.Usuario usuario)
         {
             ML.Result result = new Result();
